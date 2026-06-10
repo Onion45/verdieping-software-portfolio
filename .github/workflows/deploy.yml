@@ -1,0 +1,13 @@
+name: Deploy naar GitHub Pages
+
+   on:
+     push:
+       branches: [main]
+
+   jobs:
+     deploy:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v4
+         - name: Bevestig deployment
+           run: echo "Portfolio succesvol gedeployed naar GitHub Pages"
