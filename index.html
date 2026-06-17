@@ -352,6 +352,24 @@
     .screenshot-slot:hover { border-color: var(--accent); background: rgba(88,166,255,.04); }
     .screenshot-slot .upload-icon { font-size: 28px; }
 
+    .screenshot-filled {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .screenshot-filled img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+    .screenshot-filled .caption {
+      padding: 10px 14px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
     /* ── CRITERIA TABLE ── */
     .criteria-status {
       display: inline-flex;
@@ -613,7 +631,7 @@
 
   <div class="card">
     <div class="card-title"><span class="icon">🎙️</span> Gespreksverslag</div>
-    <p><strong>Datum:10 juni 2026</strong> <span class="placeholder" style="display:inline;padding:2px 8px;font-size:13px">Vul datum in</span> &nbsp; <strong>Gesprekspartner:</strong> <span class="placeholder" style="display:inline;padding:2px 8px;font-size:13px">Naam stagebegeleider</span></p>
+    <p><strong>Datum:</strong> <span class="placeholder" style="display:inline;padding:2px 8px;font-size:13px">Vul datum in</span> &nbsp; <strong>Gesprekspartner:</strong> <span class="placeholder" style="display:inline;padding:2px 8px;font-size:13px">Naam stagebegeleider</span></p>
     <hr class="divider">
     <div class="placeholder">Voer het gesprek met je stagebegeleider bij PCI en schrijf hier het verslag. Gebruik deze structuur:<br><br>
     1. Inleiding — wat heb je verteld over je keuzedeel?<br>
@@ -809,20 +827,20 @@
     <hr class="divider">
     <p style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px">BEWIJSSTUKKEN / SCREENSHOTS</p>
     <div class="screenshot-grid">
-      <div class="screenshot-slot">
-        <div class="upload-icon">📸</div>
-        <span>Screenshot – Repository</span>
+      <div class="screenshot-filled">
+        <img src="repo-overzicht.png" alt="Repository overzicht" />
+        <div class="caption">📁 Repository overzicht — bestanden, README en commit-historie</div>
       </div>
-      <div class="screenshot-slot">
-        <div class="upload-icon">📸</div>
-        <span>Screenshot – Commit history</span>
+      <div class="screenshot-filled">
+        <img src="commits.png" alt="Commit geschiedenis" />
+        <div class="caption">📜 Commit-geschiedenis — alle wijzigingen chronologisch</div>
       </div>
-      <div class="screenshot-slot">
-        <div class="upload-icon">📸</div>
-        <span>Screenshot – GitHub Actions</span>
+      <div class="screenshot-filled">
+        <img src="actions-groen.png" alt="GitHub Actions workflow groen" />
+        <div class="caption">✅ GitHub Actions — workflow runs succesvol (groen)</div>
       </div>
     </div>
-    <div class="placeholder" style="margin-top:12px">Vervang de placeholders hierboven door echte &lt;img&gt;-tags met jouw screenshots. Voeg er zoveel toe als je nodig hebt.</div>
+    <div class="placeholder" style="margin-top:12px">Voeg hier extra screenshots toe als je verder bent met je leertraject (bijv. per week een nieuwe).</div>
   </div>
 </section>
 
@@ -877,21 +895,36 @@
   <div class="card">
     <div class="card-title"><span class="icon">🚀</span> Het Prototype</div>
     <p>Het prototype is de website die je nu bekijkt. De broncode staat in een GitHub repository met meerdere commits, een branch-structuur en een GitHub Actions workflow.</p>
-    <div class="placeholder">Voeg hier de link naar je GitHub repository toe zodra die online staat. Bijv: <br><br>🔗 github.com/jouw-gebruikersnaam/verdieping-software-portfolio<br>🌐 jouw-gebruikersnaam.github.io/verdieping-software-portfolio</div>
+    <div class="card" style="background:rgba(63,185,80,.06);border-color:rgba(63,185,80,.3);margin-top:12px;padding:16px 20px">
+      <p style="font-family:var(--mono);font-size:13px;margin-bottom:6px">🔗 Repository: <a href="https://github.com/Onion45/verdieping-software-portfolio" target="_blank" style="color:var(--accent)">github.com/Onion45/verdieping-software-portfolio</a></p>
+      <p style="font-family:var(--mono);font-size:13px">🌐 Live site: <a href="https://onion45.github.io/verdieping-software-portfolio/" target="_blank" style="color:var(--accent)">onion45.github.io/verdieping-software-portfolio</a></p>
+    </div>
     <hr class="divider">
     <p style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px">PROTOTYPE SCREENSHOTS</p>
     <div class="screenshot-grid">
-      <div class="screenshot-slot">
-        <div class="upload-icon">📸</div>
-        <span>Repository structuur</span>
+      <div class="screenshot-filled">
+        <img src="repo-overzicht.png" alt="Repository structuur" />
+        <div class="caption">📁 Repository structuur — index.html, README, workflows</div>
       </div>
-      <div class="screenshot-slot">
-        <div class="upload-icon">📸</div>
-        <span>Branch overzicht</span>
+      <div class="screenshot-filled">
+        <img src="branches.png" alt="Branch overzicht" />
+        <div class="caption">🌿 Branch overzicht — main + feature branches met pull requests</div>
       </div>
-      <div class="screenshot-slot">
-        <div class="upload-icon">📸</div>
-        <span>GitHub Actions log</span>
+      <div class="screenshot-filled">
+        <img src="actions-groen.png" alt="GitHub Actions log" />
+        <div class="caption">⚙️ GitHub Actions — automatische deploy-workflow, succesvol</div>
+      </div>
+    </div>
+    <hr class="divider">
+    <p style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px">EXTRA BEWIJS — ISSUES & PROJECT BOARD</p>
+    <div class="screenshot-grid">
+      <div class="screenshot-filled">
+        <img src="issues-open.png" alt="Open issues" />
+        <div class="caption">🟢 Open issues — nog te behalen leerdoelen</div>
+      </div>
+      <div class="screenshot-filled">
+        <img src="issues-closed.png" alt="Gesloten issues" />
+        <div class="caption">✔️ Gesloten issues — behaalde leerdoelen</div>
       </div>
     </div>
   </div>
